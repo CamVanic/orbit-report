@@ -15,7 +15,7 @@ export class Satellite {
     }
 
     shouldShowWarning() {
-        if(this.type === "Space Debris"){
+        if(this.type.toLocaleLowerCase() === "space debris"){
             return this.changeBackground= true;
         }else{
             return this.changeBackground= false;
