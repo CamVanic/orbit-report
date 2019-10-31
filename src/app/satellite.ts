@@ -3,12 +3,22 @@ export class Satellite {
     orbitType: string;
     type: string;
     operational: boolean;
-    launchDate: string; //may need to switch position on some of these if they don't line up with thier values.
+    launchDate: string;
+    changeBackground: boolean;
+    
     constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean){
         this.name= name;
         this.type= type;
         this.launchDate=launchDate;
         this.operational= operational;
         this.orbitType= orbitType;
+    }
+
+    shouldShowWarning() {
+        if(this.type === "Space Debris"){
+            return this.changeBackground= true;
+        }else{
+            return this.changeBackground= false;
+        }
     }
 }
